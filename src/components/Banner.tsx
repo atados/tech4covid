@@ -25,10 +25,14 @@ const Banner: React.FC<BannerProps> = ({ className }) => {
               designers, marketeers, profissionais de saúde, entre muitas outras
               especialidades.
             </p>
-            <button className="bg-secondary-500 font-medium px-4 hover:border-secondary-600 py-3 rounded hover:bg-secondary-600 text-lg pulse-secondary">
+            <a
+              href="https://tech4covid.now.sh/#projects"
+              target="__blank"
+              className="bg-secondary-500 font-medium px-4 hover:border-secondary-600 py-3 rounded hover:bg-secondary-600 text-lg pulse-secondary"
+            >
               Junte-se a nós
               <MdArrowForward className="inline-block ml-2" />
-            </button>
+            </a>
             <button className="border-secondary-500 font-medium px-4 py-3 rounded hover:bg-primary-700 text-lg ml-3 text-secondary-500">
               Ler manifesto
             </button>
