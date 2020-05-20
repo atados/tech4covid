@@ -16,7 +16,9 @@ const Toolbar: React.FC<ToolbarProps> = ({ className }) => {
       </div>
       <div className="flex items-center space-x-8 text-white lg:ml-auto text-md pt-6 lg:pt-0">
         <a href="#projetos">Veja os projetos</a>
-        <a href="#manifesto">Junte-se a nós</a>
+        <a href="https://tech4covid.now.sh/#projects" target="__blank">
+          Junte-se a nós
+        </a>
         <a href="#manifesto">Leia o manifesto</a>
       </div>
     </div>
