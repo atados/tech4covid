@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import Logo from 'assets/svg/logo.svg'
-import LogoText from 'assets/svg/logo-text.svg'
+import LogoText from 'assets/svg/logo-text-2.svg'
 
 export interface ToolbarProps {
   readonly className?: string
