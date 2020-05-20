@@ -1,8 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
+import Toolbar from 'components/Toolbar'
 import Illustration from 'assets/svg/real_time_collaboration.svg'
 import { MdArrowForward } from 'react-icons/md'
-import Toolbar from 'components/Toolbar'
 
 export interface BannerProps {
   readonly className?: string
