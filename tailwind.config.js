@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./src/components/**/*.tsx', '.src/pages/**/*.tsx'],
+  purge: ['./src/components/**/*.tsx', './src/pages/**/*.tsx'],
   theme: {
     container: {
       center: true,
