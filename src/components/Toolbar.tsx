@@ -11,8 +11,8 @@ const Toolbar: React.FC<ToolbarProps> = ({ className }) => {
   return (
     <div className={cx('flex flex-col lg:flex-row', className)}>
       <div className="flex items-center">
-        <Logo height={36} width="auto" className="mr-4" />
-        <LogoText height={24} width="auto" />
+        <Logo height={36} width={60} className="mr-4" />
+        <LogoText height={28} width={361} />
       </div>
       <div className="flex items-center space-x-8 text-white lg:ml-auto text-md pt-6 lg:pt-0">
         <a href="#projetos">Veja os projetos</a>
