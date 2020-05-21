@@ -179,6 +179,7 @@ export interface HomePageData {
   subtitle: {}
   projects_title: {}
   subtitulo_dos_projetos: {}
+  manifesto_title: {}
   manifesto: {}
   _meta: {
     id: string

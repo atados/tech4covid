@@ -49,7 +49,10 @@ const HomePage: React.FC<HomePageProps> = ({ page, projects }) => {
           </div>
         </div>
       </div>
-      <Manifest className="max-w-3xl mx-auto px-3 py-16">
+      <Manifest
+        title={<RichText render={page.manifesto_title} />}
+        className="max-w-3xl mx-auto px-3 py-16"
+      >
         <RichText render={page.manifesto} />
       </Manifest>
       <Footer />
