@@ -99,6 +99,7 @@ export async function getHome(previewData) {
             projects_title
             subtitulo_dos_projetos
             manifesto
+            manifesto_title
             _meta {
               id
             }
