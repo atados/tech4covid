@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       page,
       joinLink,
     },
-    unstable_revalidate: 180,
+    unstable_revalidate: 50,
   }
 }
 

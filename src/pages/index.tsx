@@ -68,13 +68,6 @@ export const getStaticProps: GetStaticProps = async () => {
       page,
       projects,
     },
-    unstable_revalidate: 180,
-  }
-}
-
-export const getStaticPaths = () => {
-  return {
-    paths: [],
-    fallback: false,
+    unstable_revalidate: 50,
   }
 }
