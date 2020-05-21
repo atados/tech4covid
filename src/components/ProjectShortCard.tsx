@@ -1,11 +1,17 @@
 import React from 'react'
 import cx from 'classnames'
+import { RichText } from 'prismic-reactjs'
+import { ProjectData } from 'lib/prismic'
 
 export interface ProjectShortCardProps {
+  readonly project: ProjectData
   readonly className?: string
 }
 
-const ProjectShortCard: React.FC<ProjectShortCardProps> = ({ className }) => {
+const ProjectShortCard: React.FC<ProjectShortCardProps> = ({
+  className,
+  project,
+}) => {
   return (
     <div
       className={cx(
@@ -13,12 +19,11 @@ const ProjectShortCard: React.FC<ProjectShortCardProps> = ({ className }) => {
         className,
       )}
     >
-      <h4 className="font-medium text-xl">Entrega de sabão</h4>
+      <h4 className="font-medium text-xl">
+        <RichText render={project.name} />
+      </h4>
       <p className="text-gray-600">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eum
-        eveniet, sed similique, odio, quasi perspiciatis inventore nisi quos ex
-        itaque dolores totam repudiandae corrupti fugit cum delectus aspernatur?
-        Fuga.
+        <RichText render={project.description} />
       </p>
     </div>
   )

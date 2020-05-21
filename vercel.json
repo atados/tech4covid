@@ -1,0 +1,7 @@
+{
+  "env": {
+    "CMS_PRISMIC_REPOSITORY_NAME": "",
+    "CMS_PRISMIC_API_TOKEN": "",
+    "CMS_PRISMIC_REPOSITORY_LOCALE": "pt-br"
+  }
+}
