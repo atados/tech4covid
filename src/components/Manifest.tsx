@@ -10,7 +10,7 @@ const Manifest: React.FC<ManifestProps> = ({ className, title, children }) => {
   return (
     <div id="manifesto" className={className}>
       <h1 className="text-3xl font-bold mb-4 text-center">{title}</h1>
-      <div className="text-xl leading-relaxed font-serif">{children}</div>
+      <div className="text-xl leading-relaxed">{children}</div>
       <p className="text-gray-600 text-2xl font-light mt-5">
         <AtadosLogo
           width={32}
