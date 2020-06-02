@@ -30,6 +30,13 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           >
             Atados <MdOpenInNew className="inline-block" />
           </a>
+          <a
+            href="https://tech4covid19.org"
+            className="hover:text-primary-500 hover:underline hover:text-primary-500"
+            target="__blank"
+          >
+            Tech4Covid19 Portugal <MdOpenInNew className="inline-block" />
+          </a>
         </div>
         <div className="flex items-center justify-center space-x-5 text-3xl">
           <a
