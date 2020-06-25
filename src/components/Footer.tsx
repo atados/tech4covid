@@ -13,11 +13,13 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
     <div className={cx('bg-gray-200 py-12', className)}>
       <div className="container">
         <div className="flex items-center justify-center space-x-6 mb-4">
-          <Link href="/[slug]" as="/termos">
-            <a className="hover:text-primary-500 hover:underline hover:text-primary-500">
-              Termos & Condições
-            </a>
-          </Link>
+          <a
+            href="/Termos de Voluntariado.pdf"
+            download
+            className="hover:text-primary-500 hover:underline hover:text-primary-500"
+          >
+            Termos & Condições
+          </a>
           <Link href="/[slug]" as="/privacidade">
             <a className="hover:text-primary-500 hover:underline hover:text-primary-500">
               Política de privacidade
