@@ -13,7 +13,7 @@ export interface BannerProps {
 
 const Banner: React.FC<BannerProps> = ({
   title,
-  subtitle,
+/*subtitle,*/
   joinLink,
   className,
 }) => {
@@ -29,7 +29,7 @@ const Banner: React.FC<BannerProps> = ({
               {title}
             </h1>
             <p className="text-2xl text-secondary-500 mb-8 max-w-2xl">
-              {subtitle}
+            Somos um movimento voluntário que une as mais diversas habilidades e tecnologia no combate ao Coronavírus {/*subtitle*/}
             </p>
             <div>
               <a
