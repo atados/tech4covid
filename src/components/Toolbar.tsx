@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import Link from 'next/link'
 import Logo from 'assets/svg/logo.svg'
-import LogoText from 'assets/svg/logo-text-2.svg'
+import LogoText from 'assets/svg/new_logo.svg'
 
 export interface ToolbarProps {
   readonly joinLink: string
@@ -15,7 +15,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ joinLink, className }) => {
       <Link href="/">
         <a className="flex items-center">
           <Logo height={36} width={60} className="mr-4" />
-          <LogoText height={28} width={361} />
+          <LogoText width={320} height={35}/>
         </a>
       </Link>
       <div className="flex items-center space-x-8 text-white lg:ml-auto text-md pt-6 lg:pt-0">

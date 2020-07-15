@@ -65,8 +65,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         </div>
         <hr className="my-6 border-gray-300" />
         <p className="text-center text-gray-600 text-sm">
-          © {new Date().getFullYear()} Tech4Covid19 · A comunidade tecnológica
-          combate a Covid19.
+          © {new Date().getFullYear()} Tech4Covid19 · A comunidade tecnológica no
+          combate ao COVID19
         </p>
       </div>
     </div>
