@@ -1,7 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
 import Toolbar from 'components/Toolbar'
-import Illustration from 'assets/svg/real_time_collaboration.svg'
 import { MdArrowForward } from 'react-icons/md'
 
 export interface BannerProps {
@@ -22,9 +21,9 @@ const Banner: React.FC<BannerProps> = ({
       className={cx('py-16 overflow-hidden', className)}
     >
       <Toolbar joinLink={joinLink} className="mb-4 container" />
-      <div className="container py-2">
-        <div className="flex flex-wrap -mx-2">
-          <div className="px-2 lg:w-1/2">
+      <div className="container">
+        <div className="flex flex-wrap content-center items-center justify-between">
+          <div className="flex-1">
             <h1 className="text-5xl font-bold leading-tight max-w-2xl">
               {title}
             </h1>
@@ -48,8 +47,8 @@ const Banner: React.FC<BannerProps> = ({
               </a>
             </div>
           </div>
-          <div className="w-1/2 hidden lg:block">
-            <Illustration height={400} />
+          <div className="flex-1">
+            <img src="cover-image.png" alt="Ilustração estilizada do corona vírus" class="object-contain object-center" />
           </div>
         </div>
       </div>
