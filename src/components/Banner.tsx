@@ -19,7 +19,7 @@ const Banner: React.FC<BannerProps> = ({
 }) => {
   return (
     <div
-      className={cx('banner bg-primary-500 py-16 overflow-hidden', className)}
+      className={cx('py-16 overflow-hidden', className)}
     >
       <Toolbar joinLink={joinLink} className="mb-4 container" />
       <div className="container py-2">
