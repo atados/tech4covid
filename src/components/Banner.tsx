@@ -53,11 +53,6 @@ const Banner: React.FC<BannerProps> = ({
           </div>
         </div>
       </div>
-      <style jsx>{`
-        .banner {
-          background-image: url(/assets/bg-pattern-1.svg);
-        }
-      `}</style>
     </div>
   )
 }
