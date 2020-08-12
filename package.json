@@ -4,6 +4,7 @@
     "build": "next build",
     "type-check": "tsc --noEmit"
   },
+  "homepage": "https://tech4covid19.org.br/",
   "dependencies": {
     "classnames": "^2.2.6",
     "next": "^9.4.0",
