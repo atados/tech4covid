@@ -16,7 +16,7 @@ const TextPage: React.FC<TextPageProps> = ({ joinLink, page }) => {
   return (
     <div>
       <NextSeo title={`${page.title[0].text} | Tech4Covid`} />
-      <div className="bg-primary-500 py-16">
+      <div className="bg-white py-16">
         <Toolbar joinLink={joinLink} className="mb-4 container" />
       </div>
       <div className="container py-12">
