@@ -35,38 +35,3 @@
   animation: pulse-secondary 2s infinite;
   transform: scale(1);
 }
-
-.topBarLink {
-  color: black;
-  font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
-  padding: 0.8rem;
-  border-radius: 0.8rem;
-  transition: background-color 0.2s;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.topBarLink:hover {
-  background-color: rgb(243, 243, 243);
-}
-
-.topBarLink p {
-  margin-left: 0.5rem;
-  position: relative;
-  bottom: 0.05rem;
-}
-
-.bg-secondary-500 {
-  transition: background-color 0.2s;
-}
-
-.bg-secondary-500:hover {
-  background-color: #ffd000;
-}
-
-.border-secondary-500 {
-  transition: background-color 0.2s;
-}
