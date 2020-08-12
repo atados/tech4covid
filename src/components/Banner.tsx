@@ -24,7 +24,7 @@ const Banner: React.FC<BannerProps> = ({
       <Toolbar joinLink={joinLink} className="mb-4 container" />
       <div className="container py-2">
         <div className="flex flex-wrap -mx-2">
-          <div className="px-2 lg:w-1/2">
+          <div className="px-2 lg:w-1/2 aligned">
             <h1 className="text-5xl font-bold leading-tight max-w-2xl">
               {title}
             </h1>
