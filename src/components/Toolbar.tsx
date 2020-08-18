@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Logo from 'assets/svg/logo.svg'
 import LogoText from 'assets/svg/new_logo.svg'
 import { FaCode, FaUserFriends, FaBookOpen } from 'react-icons/fa'
+import { Link as SmoothScroll } from 'react-scroll'
 
 export interface ToolbarProps {
   readonly joinLink: string
@@ -28,20 +29,24 @@ const Toolbar: React.FC<ToolbarProps> = ({ joinLink, className }) => {
           <FaUserFriends className="inline-block mr-2" />
           Junte-se a nós
         </a>
-        <a
-          href="#projetos"
-          className="hover:underline hover:text-secondary-800 hover:bg-secondary-200"
+        <SmoothScroll
+          to="projetos"
+          className="hover:underline hover:text-secondary-800 hover:bg-secondary-200 cursor-pointer"
+          smooth
+          duration={500}
         >
           <FaCode className="inline-block mr-2" />
           Veja os projetos
-        </a>
-        <a
-          className="hover:underline hover:text-secondary-800 hover:bg-secondary-200"
-          href="#manifesto"
+        </SmoothScroll>
+        <SmoothScroll
+          className="hover:underline hover:text-secondary-800 hover:bg-secondary-200 cursor-pointer"
+          to="manifesto"
+          smooth
+          duration={800}
         >
           <FaBookOpen className="inline-block mr-2" />
           Leia o manifesto
-        </a>
+        </SmoothScroll>
       </div>
     </div>
   )

@@ -3,6 +3,7 @@ import cx from 'classnames'
 import Toolbar from 'components/Toolbar'
 import Illustration from 'assets/svg/real_time_collaboration.svg'
 import { MdArrowForward } from 'react-icons/md'
+import { Link } from 'react-scroll'
 
 export interface BannerProps {
   readonly title: React.ReactNode
@@ -40,12 +41,14 @@ const Banner: React.FC<BannerProps> = ({
                 Junte-se a nós
                 <MdArrowForward className="inline-block ml-2" />
               </a>
-              <a
-                href="#manifesto"
-                className="border-secondary-500 font-medium px-5 py-4 rounded hover:bg-primary-700 text-lg ml-3 text-secondary-500"
+              <Link
+                to="manifesto"
+                className="border-secondary-500 font-medium px-5 py-4 rounded hover:bg-primary-700 text-lg ml-3 text-secondary-500 cursor-pointer"
+                smooth
+                duration={800}
               >
                 Ler manifesto
-              </a>
+              </Link>
             </div>
           </div>
           <div className="w-1/2 hidden lg:block">
