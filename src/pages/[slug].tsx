@@ -13,6 +13,10 @@ interface TextPageProps {
 }
 
 const TextPage: React.FC<TextPageProps> = ({ joinLink, page }) => {
+  if (!page) {
+    return <>...</>
+  }
+
   return (
     <div>
       <NextSeo title={`${page.title[0].text} | Tech4Covid`} />
@@ -49,13 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths = () => {
   return {
-    paths: [
-      {
-        params: {
-          slug: 'privacidade',
-        },
-      },
-    ],
-    fallback: false,
+    paths: [],
+    fallback: true,
   }
 }
