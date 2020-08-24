@@ -54,7 +54,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => {
   const paths = await getPaths()
   return {
-    paths: paths.map((slug) => ({ params: { slug } })),
+    paths: paths.map((slug) => ({
+      params: { slug: slug.startsWith('/') ? slug.substr(1) : slug },
+    })),
     fallback: true,
   }
 }
