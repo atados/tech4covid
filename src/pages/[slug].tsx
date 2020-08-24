@@ -19,14 +19,14 @@ const TextPage: React.FC<TextPageProps> = ({ joinLink, page }) => {
       <div className="bg-white py-16">
         <Toolbar joinLink={joinLink} className="mb-4 container" />
       </div>
-      <div className="container py-12">
+      <main className="container py-12">
         <h1 className="text-4xl font-bold mb-5">
           <RichText render={page.title} />
         </h1>
-        <div className="text-xl">
+        <article className="text-xl prose lg:prose-xl">
           <RichText render={page.content} />
-        </div>
-      </div>
+        </article>
+      </main>
       <Footer />
     </div>
   )

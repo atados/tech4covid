@@ -6,6 +6,7 @@
   },
   "homepage": "https://tech4covid19.org.br/",
   "dependencies": {
+    "@tailwindcss/typography": "^0.2.0",
     "classnames": "^2.2.6",
     "next": "^9.4.0",
     "next-react-svg": "^1.1.1",
@@ -15,7 +16,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.7.3"
   },
   "devDependencies": {
     "@types/node": "^13.13.5",
