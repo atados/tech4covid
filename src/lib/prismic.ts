@@ -134,6 +134,24 @@ export async function getHome(previewData) {
   }
 }
 
+export const getPaths = async (): Promise<string[]> => {
+  const data = await fetchAPI(
+    `
+    query {
+      page: allText_pages {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `,
+  )
+
+  return data.page.edges.map((edge) => edge.node.slug)
+}
+
 export const getPage = async (slug: string) => {
   const data = await fetchAPI(
     `
