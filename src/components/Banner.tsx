@@ -29,21 +29,21 @@ const Banner: React.FC<BannerProps> = ({
             <h1 className="text-5xl font-bold leading-tight max-w-2xl">
               {title}
             </h1>
-            <p className="text-2xl mb-8 max-w-2xl">
+            <p className="text-2xl my-8 max-w-2xl">
               {subtitle}
             </p>
             <div>
               <a
                 href={joinLink}
                 target="__blank"
-                className="bg-secondary-500 font-medium px-5 hover:border-secondary-600 py-4 rounded hover:bg-secondary-600 text-lg pulse-secondary"
+                className="bg-secondary-500 font-medium px-5 hover:border-secondary-600 transition duration-300 py-4 rounded hover:bg-secondary-600 text-lg pulse-secondary"
               >
                 Junte-se a nós
                 <MdArrowForward className="inline-block ml-2" />
               </a>
               <Link
                 to="manifesto"
-                className="border-secondary-500 font-medium px-5 py-4 rounded hover:bg-primary-700 text-lg ml-3 text-secondary-500 cursor-pointer"
+                className="border-secondary-500 font-medium px-5 py-4 rounded transition duration-200 hover:bg-secondary-900 text-lg ml-3 text-secondary-500 cursor-pointer"
                 smooth
                 duration={800}
               >

@@ -44,27 +44,27 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <a
             target="__blank"
             href="https://github.com/atados/tech4covid"
-            className="text-gray-600 hover:text-primary-500"
+            className="text-gray-600 hover:text-primary-500 transition duration-100"
           >
             <FaGithub />
           </a>
           <a
             target="__blank"
             href="https://instagram.com/atados"
-            className="text-gray-600 hover:text-primary-500"
+            className="text-gray-600 hover:text-primary-500 transition duration-100"
           >
             <FaInstagram />
           </a>
           <a
             target="__blank"
             href="https://www.facebook.com/atadosjuntandogenteboa/"
-            className="text-gray-600 hover:text-primary-500"
+            className="text-gray-600 hover:text-primary-500 transition duration-100"
           >
             <FaFacebook />
           </a>
         </div>
         <hr className="my-6 border-gray-300" />
-        <p className="text-center text-gray-600 text-sm">
+        <p className="text-center text-gray-600 text-sm cursor-default">
           © {new Date().getFullYear()} Tech4Covid19 · A comunidade tecnológica no
           combate ao COVID19
         </p>

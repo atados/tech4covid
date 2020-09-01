@@ -15,7 +15,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ joinLink, className }) => {
   return (
     <div className={cx('flex flex-col lg:flex-row', className)}>
       <Link href="/">
-        <a className="flex items-center">
+        <a className="flex items-center hover:opacity-75 transition duration-300 ease-out">
           <Logo height={36} width={60} className="mr-4" />
           <LogoText width={320} height={35} />
         </a>
@@ -24,14 +24,14 @@ const Toolbar: React.FC<ToolbarProps> = ({ joinLink, className }) => {
         <a
           href={joinLink}
           target="__blank"
-          className="hover:underline hover:text-secondary-800 hover:bg-secondary-200"
+          className="hover:text-secondary-800 transition duration-300 nudge"
         >
           <FaUserFriends className="inline-block mr-2" />
           Junte-se a nós
         </a>
         <SmoothScroll
           to="projetos"
-          className="hover:underline hover:text-secondary-800 hover:bg-secondary-200 cursor-pointer"
+          className="hover:text-secondary-800 transition duration-300 nudge cursor-pointer"
           smooth
           duration={500}
         >
@@ -39,7 +39,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ joinLink, className }) => {
           Veja os projetos
         </SmoothScroll>
         <SmoothScroll
-          className="hover:underline hover:text-secondary-800 hover:bg-secondary-200 cursor-pointer"
+          className="hover:text-secondary-800 transition duration-300 nudge cursor-pointer"
           to="manifesto"
           smooth
           duration={800}
