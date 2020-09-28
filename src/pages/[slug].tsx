@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from 'components/Footer'
 import { GetStaticProps } from 'next'
-import { TextPageData, getPage } from 'lib/prismic'
+import { TextPageData, getPage, getPaths } from 'lib/prismic'
 import { RichText } from 'prismic-reactjs'
 import Toolbar from 'components/Toolbar'
 import { NextSeo } from 'next-seo'
@@ -13,20 +13,24 @@ interface TextPageProps {
 }
 
 const TextPage: React.FC<TextPageProps> = ({ joinLink, page }) => {
+  if (!page) {
+    return <>...</>
+  }
+
   return (
     <div>
       <NextSeo title={`${page.title[0].text} | Tech4Covid`} />
-      <div className="bg-white py-16">
+      <div className="bg-white pt-16 pb-10">
         <Toolbar joinLink={joinLink} className="mb-4 container" />
       </div>
-      <div className="container py-12">
-        <h1 className="text-4xl font-bold mb-5">
+      <main className="container pb-12 max-w-3xl">
+        <h1 className="text-5xl lg:text-6xl font-bold text-secondary-600 mb-5">
           <RichText render={page.title} />
         </h1>
-        <div className="text-xl">
+        <article className="text-xl prose lg:prose-md">
           <RichText render={page.content} />
-        </div>
-      </div>
+        </article>
+      </main>
       <Footer />
     </div>
   )
@@ -47,15 +51,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 
-export const getStaticPaths = () => {
+export const getStaticPaths = async () => {
+  const paths = await getPaths()
   return {
-    paths: [
-      {
-        params: {
-          slug: 'privacidade',
-        },
-      },
-    ],
-    fallback: false,
+    paths: paths.map((slug) => ({
+      params: { slug: slug.startsWith('/') ? slug.substr(1) : slug },
+    })),
+    fallback: true,
   }
 }
