@@ -11,7 +11,7 @@ const Manifest: React.FC<ManifestProps> = ({ className, title, children }) => {
     <div id="manifesto" className={className}>
       <h1 className="text-3xl font-bold mb-4 text-center">{title}</h1>
       <div className="text-xl leading-relaxed">{children}</div>
-      <p className="text-gray-600 text-2xl font-light mt-5">
+      <p className="text-gray-600 text-2xl font-light mt-5 select-none">
         <AtadosLogo
           width={32}
           height={32}

@@ -15,11 +15,11 @@ const ProjectShortCard: React.FC<ProjectShortCardProps> = ({
   return (
     <div
       className={cx(
-        'bg-white h-64 rounded-lg border-4 border-gray-300 hover:border-secondary-500 p-5',
+        'bg-white h-64 rounded-lg border-4 border-gray-300 hover:border-secondary-500 p-5 box-content lg:box-border transition duration-100',
         className,
       )}
     >
-      <h4 className="font-medium text-xl">
+      <h4 className="font-medium text-xl cursor-default">
         <RichText render={project.name} />
       </h4>
       <p className="text-gray-600">
