@@ -39,14 +39,18 @@ const Toolbar: React.FC<ToolbarProps> = ({ joinLink, className, darkMode }) => {
         <a
           href={joinLink}
           target="__blank"
-          className="hover:text-secondary-800 transition duration-300 nudge"
+          className={`${
+            darkMode ? 'hover:text-secondary-600' : 'hover:text-secondary-800'
+          } transition duration-300 nudge`}
         >
           <FaUserFriends className="inline-block mr-2" />
           Junte-se a nós
         </a>
         <SmoothScroll
           to="projetos"
-          className="hover:text-secondary-800 transition duration-300 nudge cursor-pointer"
+          className={`${
+            darkMode ? 'hover:text-secondary-600' : 'hover:text-secondary-800'
+          } transition duration-300 nudge cursor-pointer`}
           smooth
           duration={500}
         >
@@ -54,7 +58,9 @@ const Toolbar: React.FC<ToolbarProps> = ({ joinLink, className, darkMode }) => {
           Veja os projetos
         </SmoothScroll>
         <SmoothScroll
-          className="hover:text-secondary-800 transition duration-300 nudge cursor-pointer"
+          className={`${
+            darkMode ? 'hover:text-secondary-600' : 'hover:text-secondary-800'
+          } transition duration-300 nudge cursor-pointer`}
           to="manifesto"
           smooth
           duration={800}
