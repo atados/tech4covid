@@ -6,7 +6,6 @@ import { MdArrowForward } from 'react-icons/md'
 import { Link } from 'react-scroll'
 
 export interface BannerProps {
-  readonly darkMode: boolean
   readonly title: React.ReactNode
   readonly subtitle: React.ReactNode
   readonly joinLink: string
@@ -14,7 +13,6 @@ export interface BannerProps {
 }
 
 const Banner: React.FC<BannerProps> = ({
-  darkMode,
   title,
   subtitle,
   joinLink,
@@ -22,30 +20,16 @@ const Banner: React.FC<BannerProps> = ({
 }) => {
   return (
     <div
-      className={`${cx('py-16 overflow-hidden', className)}${
-        darkMode ? ' bg-gray-800' : undefined
-      }`}
+      className={`${cx('py-16 overflow-hidden dark:bg-gray-800', className)}`}
     >
-      <Toolbar
-        darkMode={darkMode}
-        joinLink={joinLink}
-        className="mb-4 container"
-      />
+      <Toolbar joinLink={joinLink} className="mb-4 container" />
       <div className="container py-2">
         <div className="flex flex-wrap -mx-2">
           <div className="px-2 lg:w-1/2 flex flex-col justify-center">
-            <h1
-              className={`text-5xl font-bold leading-tight max-w-2xl${
-                darkMode ? ' text-gray-100' : undefined
-              }`}
-            >
+            <h1 className="text-5xl font-bold leading-tight max-w-2xl dark:text-gray-100">
               {title}
             </h1>
-            <p
-              className={`text-2xl my-8 max-w-2xl${
-                darkMode ? ' text-gray-100' : undefined
-              }`}
-            >
+            <p className="text-2xl my-8 max-w-2xl dark:text-gray-100">
               {subtitle}
             </p>
             <div>

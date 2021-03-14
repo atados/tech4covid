@@ -3,6 +3,7 @@ import ProjectShortCard from 'components/ProjectShortCard'
 import Banner from 'components/Banner'
 import Footer from 'components/Footer'
 import Manifest from 'components/Manifest'
+import Monitor from 'components/Monitor'
 import { FaRocket, FaDatabase, FaMoon, FaSun } from 'react-icons/fa'
 import { GetStaticProps } from 'next'
 import { getHome, HomePageData, ProjectData } from 'lib/prismic'
@@ -10,7 +11,6 @@ import { RichText } from 'prismic-reactjs'
 import { NextSeo } from 'next-seo'
 
 import api from 'services/api'
-import Monitor from 'components/Monitor'
 
 interface HomePageProps {
   readonly page: HomePageData
@@ -34,7 +34,6 @@ interface dataResponse {
 } //formato da resposta da API do Covid para referência e uso
 
 const HomePage: React.FC<HomePageProps> = ({ page, projects }) => {
-  const [darkMode, setDarkMode] = useState(false)
   const [data, setData] = useState({
     Confirmed: '--',
     Deaths: '--',
@@ -49,14 +48,22 @@ const HomePage: React.FC<HomePageProps> = ({ page, projects }) => {
     Active: true,
   })
 
+  const updateTheme = () => {
+    if (
+      localStorage.theme === 'dark' ||
+      ((!('theme' in localStorage) ||
+        ('theme' in localStorage && localStorage.theme !== 'light')) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark')
+      console.log('found dark mode preference')
+    } else {
+      document.documentElement.classList.remove('dark')
+      console.log('found light mode preference')
+    }
+  }
   useEffect(() => {
-    // setDarkMode(
-    //   window.matchMedia &&
-    //     window.matchMedia('(prefers-color-scheme: dark)').matches,
-    // )
-    // window
-    //   .matchMedia('(prefers-color-scheme: dark)')
-    //   .addEventListener('change', (e) => setDarkMode(e.matches))
+    updateTheme()
   })
 
   const getData = () => {
@@ -90,21 +97,36 @@ const HomePage: React.FC<HomePageProps> = ({ page, projects }) => {
       })
       .catch((reason) => console.log('error fetching data: ', reason))
   }
-
   useEffect(getData)
 
   return (
-    <div className={darkMode ? 'bg-gray-800' : undefined}>
+    <div className="dark:bg-gray-800">
       <NextSeo title="Tech4Covid" />
       <div className="checkContainer">
         <input
           type="checkbox"
           className="checkbox"
           id="toggle"
-          defaultChecked={darkMode}
-          onChange={() => {
-            setDarkMode((prevState) => !prevState)
-            console.log(darkMode)
+          defaultChecked={
+            typeof window !== 'undefined' &&
+            document.documentElement.classList.contains('dark')
+          }
+          onClick={() => {
+            const toggle = document.getElementById('toggle') as HTMLInputElement
+            if (
+              !toggle.checked &&
+              document.documentElement.classList.contains('dark')
+            ) {
+              localStorage.setItem('theme', 'light')
+              updateTheme()
+            }
+          }}
+          onChange={(e) => {
+            e.target.checked
+              ? localStorage.setItem('theme', 'dark')
+              : localStorage.setItem('theme', 'light')
+
+            updateTheme()
           }}
         />
         <label className="label" htmlFor="toggle">
@@ -114,31 +136,24 @@ const HomePage: React.FC<HomePageProps> = ({ page, projects }) => {
         </label>
       </div>
       <Banner
-        darkMode={darkMode}
         title={<RichText render={page.title} />}
         subtitle={<RichText render={page.subtitle} />}
         joinLink={page.button_link.url}
       />
-      <div
-        id="hub"
-        className={`${darkMode ? 'bg-gray-900' : 'bg-gray-200'} pb-16 pt-12`}
-      >
+      <div id="hub" className="pb-16 pt-12 bg-gray-200 dark:bg-gray-900">
         <div className="container">
           <div className="mb-8 text-center">
             <div className="w-16 h-16 bg-secondary-500 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-secondary-900">
               <FaDatabase />
             </div>
             <h1 className="text-3xl font-bold">
-              <h1 className={darkMode ? 'text-gray-100' : undefined}>
-                Monitor de dados
-              </h1>
+              <h1 className="dark:text-gray-100">Monitor de dados</h1>
             </h1>
             <p className="text-xl font-light text-gray-600 max-w-xl mx-auto">
               <RichText render={page.subtitulo_dos_projetos} />
             </p>
           </div>
           <Monitor
-            darkMode={darkMode}
             Active={String(data.Active)}
             Confirmed={String(data.Confirmed)}
             Recovered={String(data.Recovered)}
@@ -149,21 +164,14 @@ const HomePage: React.FC<HomePageProps> = ({ page, projects }) => {
           />
         </div>
       </div>
-      <hr className={`${darkMode ? 'border-gray-800' : undefined}`} />
-      <div
-        id="projetos"
-        className={`${darkMode ? 'bg-gray-900' : 'bg-gray-200'} pb-6 pt-12`}
-      >
+      <hr className="dark:border-gray-800" />
+      <div id="projetos" className="pb-6 pt-12 bg-gray-200 dark:bg-gray-900">
         <div className="container">
           <div className="mb-8 text-center">
             <div className="w-16 h-16 bg-secondary-500 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl text-secondary-900">
               <FaRocket />
             </div>
-            <h1
-              className={`text-3xl font-bold${
-                darkMode ? ' text-gray-100' : undefined
-              }`}
-            >
+            <h1 className="text-3xl font-bold dark:text-gray-100">
               <RichText render={page.projects_title} />
             </h1>
             <p className="text-xl font-light text-gray-600 max-w-xl mx-auto">
@@ -176,20 +184,19 @@ const HomePage: React.FC<HomePageProps> = ({ page, projects }) => {
                 key={project._meta.uid}
                 className="w-full md:w-1/3 px-2 mb-4 overflow-hidden"
               >
-                <ProjectShortCard darkMode={darkMode} project={project} />
+                <ProjectShortCard project={project} />
               </div>
             ))}
           </div>
         </div>
       </div>
       <Manifest
-        darkMode={darkMode}
         title={<RichText render={page.manifesto_title} />}
         className={`max-w-3xl mx-auto px-3 py-16`}
       >
         <RichText render={page.manifesto} />
       </Manifest>
-      <Footer darkMode={darkMode} />
+      <Footer />
     </div>
   )
 }

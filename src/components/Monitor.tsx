@@ -2,10 +2,8 @@ import React from 'react'
 import Map from '../assets/svg/brazil.svg'
 import { Link } from 'react-scroll'
 import { FaCaretDown, FaCaretUp, FaPlay } from 'react-icons/fa'
-import { spawn } from 'child_process'
 
 interface MonitorProps {
-  darkMode: boolean
   Confirmed: string
   Active: string
   Recovered: string
@@ -21,7 +19,6 @@ interface MonitorProps {
 }
 
 const Monitor: React.FC<MonitorProps> = ({
-  darkMode,
   Confirmed,
   Active,
   Recovered,
@@ -32,13 +29,7 @@ const Monitor: React.FC<MonitorProps> = ({
 }) => {
   return (
     <div>
-      <div
-        className={`flex flex-col mx-16 md:mx-0 ${
-          darkMode ? 'bg-gray-800' : 'bg-white'
-        } md:p-8 rounded-lg justify-evenly border-4 border-solid ${
-          darkMode ? 'border-gray-700' : 'border-gray-00'
-        } md:flex-row py-8`}
-      >
+      <div className="flex flex-col mx-16 md:mx-0 md:p-8 rounded-lg justify-evenly border-4 border-solid md:flex-row py-8 bg-white border-gray-00 dark:bg-gray-800 dark:border-gray-700">
         <div>
           <Map className="w-0 h-0 absolute lg:w-64 lg:h-64 invisible lg:visible xl:visible ping avoid-global" />
           <Map className="w-0 h-0 lg:w-64 lg:h-64 invisible lg:visible xl:visible avoid-global" />
@@ -49,11 +40,7 @@ const Monitor: React.FC<MonitorProps> = ({
               {Confirmed}
             </h1>
             <span className="flex flex-row items-center justify-center">
-              <h2
-                className={`${
-                  darkMode ? 'text-gray-100' : 'text-black'
-                } text-center text-2xl font-extrabold leading-none`}
-              >
+              <h2 className="text-center text-2xl font-extrabold leading-none text-black dark:text-gray-100">
                 Casos confirmados
               </h2>
               {Active !== '--' &&
@@ -75,11 +62,7 @@ const Monitor: React.FC<MonitorProps> = ({
               {Active}
             </h1>
             <span className="flex flex-row items-center justify-center">
-              <h2
-                className={`${
-                  darkMode ? 'text-gray-100' : 'text-black'
-                } text-center text-2xl font-extrabold leading-none`}
-              >
+              <h2 className="text-center text-2xl font-extrabold leading-none text-black dark:text-gray-100">
                 Casos ativos
               </h2>
               {Active !== '--' &&
@@ -101,11 +84,7 @@ const Monitor: React.FC<MonitorProps> = ({
               {Recovered}
             </h1>
             <span className="flex flex-row items-center justify-center">
-              <h2
-                className={`${
-                  darkMode ? 'text-gray-100' : 'text-black'
-                } text-center text-2xl font-extrabold leading-none`}
-              >
+              <h2 className="text-center text-2xl font-extrabold leading-none text-black dark:text-gray-100">
                 Recuperações
               </h2>
               {Active !== '--' &&
@@ -127,11 +106,7 @@ const Monitor: React.FC<MonitorProps> = ({
               {Deaths}
             </h1>
             <span className="flex flex-row items-center justify-center">
-              <h2
-                className={`${
-                  darkMode ? 'text-gray-100' : 'text-black'
-                } text-center text-2xl font-extrabold leading-none`}
-              >
+              <h2 className="text-center text-2xl font-extrabold leading-none text-black dark:text-gray-100">
                 Óbitos
               </h2>
               {Active !== '--' &&
@@ -159,11 +134,7 @@ const Monitor: React.FC<MonitorProps> = ({
             <h1 className="text-secondary-500 text-center text-xxl font-extrabold leading-snug shine-text">
               {ProjectCount}
             </h1>
-            <h2
-              className={`${
-                darkMode ? 'text-gray-100' : 'text-black'
-              } text-center text-4xl font-extrabold leading-none`}
-            >
+            <h2 className="text-center text-4xl font-extrabold leading-none text-black dark:text-gray-100">
               Projetos
               <br />
               Tech4Covid
@@ -171,7 +142,7 @@ const Monitor: React.FC<MonitorProps> = ({
           </Link>
         </div>
       </div>
-      <p className="text-center text-primary-300 mt-3">
+      <p className="text-center text-primary-300 mt-3 cursor-default">
         {Active !== '--' &&
           `Última atualização dos dados: ${Date.slice(8, 10)}/${Date.slice(
             5,

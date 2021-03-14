@@ -1,5 +1,6 @@
 module.exports = {
   purge: ['./src/components/**/*.tsx', './src/pages/**/*.tsx'],
+  darkMode: 'class',
   theme: {
     extend: {
       spacing: {
@@ -51,6 +52,10 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      display: ['dark'],
+    },
+  },
   plugins: [require('@tailwindcss/typography')],
 }
