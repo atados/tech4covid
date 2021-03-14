@@ -162,14 +162,28 @@
   opacity: 0.9;
 }
 
-* {
-  transition: all 0.3s ease-out;
+@media screen and (min-width: 1536px) {
+  .illustration-container {
+    margin-left: 0 !important;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+div,
+h1,
+h2,
+h3,
+p {
+  transition: all 0.2s cubic-bezier(0.05, 0.77, 0.6, 0.99);
   box-sizing: border-box;
 }
 
 .checkContainer {
   position: absolute;
-  top: 10px;
+  top: 5px;
   right: 20px;
   transform: scale(0.8);
 }
@@ -201,7 +215,7 @@
   height: 22px;
   width: 22px;
   transform: translateX(0px);
-  transition: transform 0.2s linear;
+  transition: transform 0.2s cubic-bezier(0.05, 0.77, 0.6, 0.99);
 }
 
 .checkbox:checked + .label .circle {

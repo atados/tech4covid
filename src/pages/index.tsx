@@ -3,21 +3,12 @@ import ProjectShortCard from 'components/ProjectShortCard'
 import Banner from 'components/Banner'
 import Footer from 'components/Footer'
 import Manifest from 'components/Manifest'
-import {
-  FaRocket,
-  FaDatabase,
-  FaCaretDown,
-  FaCaretUp,
-  FaMoon,
-  FaSun,
-} from 'react-icons/fa'
+import { FaRocket, FaDatabase, FaMoon, FaSun } from 'react-icons/fa'
 import { GetStaticProps } from 'next'
 import { getHome, HomePageData, ProjectData } from 'lib/prismic'
 import { RichText } from 'prismic-reactjs'
 import { NextSeo } from 'next-seo'
-import { Link } from 'react-scroll'
 
-import Map from 'assets/svg/brazil.svg'
 import api from 'services/api'
 import Monitor from 'components/Monitor'
 

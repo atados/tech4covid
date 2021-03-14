@@ -67,7 +67,7 @@ const Banner: React.FC<BannerProps> = ({
               </Link>
             </div>
           </div>
-          <div className="w-1/2 hidden lg:block">
+          <div className="illustration-container w-1/2 hidden lg:block -ml-48 xl:-ml-16">
             <Illustration height={400} />
           </div>
         </div>

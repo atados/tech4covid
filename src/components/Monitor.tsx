@@ -40,8 +40,8 @@ const Monitor: React.FC<MonitorProps> = ({
         } md:flex-row py-8`}
       >
         <div>
-          <Map className="w-0 h-0 absolute lg:w-64 lg:h-64 invisible lg:visible xl:visible ping" />
-          <Map className="w-0 h-0 lg:w-64 lg:h-64 invisible lg:visible xl:visible" />
+          <Map className="w-0 h-0 absolute lg:w-64 lg:h-64 invisible lg:visible xl:visible ping avoid-global" />
+          <Map className="w-0 h-0 lg:w-64 lg:h-64 invisible lg:visible xl:visible avoid-global" />
         </div>
         <div className="dataContainer flex flex-col md:grid grid-cols-2 grid-rows-2 col-gap-8 row-gap-8 lg:mx-0 md:mx-0 md:ml-4 lg:ml-0 sm:mx-0">
           <div className="flex flex-col justify-center align-center cursor-default">
