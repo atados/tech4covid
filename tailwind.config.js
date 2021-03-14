@@ -1,24 +1,25 @@
 module.exports = {
   purge: ['./src/components/**/*.tsx', './src/pages/**/*.tsx'],
+  darkMode: 'class',
   theme: {
     extend: {
       spacing: {
-        'nudge': '-40px'
-      }
+        nudge: '-40px',
+      },
     },
     fontSize: {
-      'xs': '.75rem',
-      'sm': '.875rem',
-      'tiny': '.875rem',
-      'base': '1rem',
-      'lg': '1.125rem',
-      'xl': '1.25rem',
+      xs: '.75rem',
+      sm: '.875rem',
+      tiny: '.875rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
       '2xl': '1.5rem',
       '3xl': '1.875rem',
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
-      'xxl': '8rem'
+      xxl: '8rem',
     },
     container: {
       center: true,
@@ -51,6 +52,10 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      display: ['dark'],
+    },
+  },
   plugins: [require('@tailwindcss/typography')],
 }

@@ -20,16 +20,16 @@ const Banner: React.FC<BannerProps> = ({
 }) => {
   return (
     <div
-      className={cx('py-16 overflow-hidden', className)}
+      className={`${cx('py-16 overflow-hidden dark:bg-gray-800', className)}`}
     >
       <Toolbar joinLink={joinLink} className="mb-4 container" />
       <div className="container py-2">
         <div className="flex flex-wrap -mx-2">
           <div className="px-2 lg:w-1/2 flex flex-col justify-center">
-            <h1 className="text-5xl font-bold leading-tight max-w-2xl">
+            <h1 className="text-5xl font-bold leading-tight max-w-2xl dark:text-gray-100">
               {title}
             </h1>
-            <p className="text-2xl my-8 max-w-2xl">
+            <p className="text-2xl my-8 max-w-2xl dark:text-gray-100">
               {subtitle}
             </p>
             <div>
@@ -47,11 +47,11 @@ const Banner: React.FC<BannerProps> = ({
                 smooth
                 duration={800}
               >
-                Ler manifesto
+                Ler&nbsp;manifesto
               </Link>
             </div>
           </div>
-          <div className="w-1/2 hidden lg:block">
+          <div className="illustration-container w-1/2 hidden lg:block -ml-48 xl:-ml-16">
             <Illustration height={400} />
           </div>
         </div>
